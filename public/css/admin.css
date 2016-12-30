@@ -1,0 +1,369 @@
+@charset "UTF-8";
+/*共用顏色*/
+/*基準字體大小*/
+/*顏色設置(背景色、文字顏色(預設白))*/
+/*尺寸設置(寬度、高度)*/
+/*字體大小設置(尺寸比例、字寬設定)*/
+/*基礎按鈕樣式設定*/
+/*基礎標籤樣式設定*/
+/*全域設置*/
+* {
+  font-family: 'Oswald', 微軟正黑體;
+  position: relative;
+  vertical-align: top;
+  list-style: none;
+  box-sizing: border-box;
+  color: unset;
+}
+
+html {
+  width: 100%;
+  background-color: #999;
+}
+
+body {
+  margin: auto;
+  letter-spacing: 1px;
+  background-color: #f3f7f7;
+  color: #333333;
+  background-color: #eee;
+  min-width: 700px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: auto;
+}
+
+h1 .english {
+  font-size: 24px;
+  font-weight: auto;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: auto;
+}
+
+h2 .english {
+  font-size: 16px;
+  font-weight: auto;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: auto;
+}
+
+h3 .english {
+  font-size: 12px;
+  font-weight: auto;
+}
+
+.color-primary {
+  background-color: #333333;
+  color: #f3f7f7;
+}
+
+.color-secondary {
+  background-color: #27232F;
+  color: #f3f7f7;
+}
+
+.color-accent {
+  background-color: #ffb336;
+  color: #333333;
+  font-weight: 500;
+}
+
+.btn {
+  padding: 5px 15px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: default;
+  color: default;
+  border: solid 1px default;
+  text-decoration: none;
+}
+
+.btn-primary {
+  padding: 5px 15px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #337ab7;
+  color: #fff;
+  border: solid 1px #337ab7;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #22527b;
+  border: solid 1px #22527b;
+  color: #fff;
+}
+
+.btn-success {
+  padding: 5px 15px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #5cb85c;
+  color: #fff;
+  border: solid 1px #5cb85c;
+  text-decoration: none;
+}
+
+.btn-success:hover {
+  background-color: #3d8b3d;
+  border: solid 1px #3d8b3d;
+  color: #fff;
+}
+
+.btn-danger {
+  padding: 5px 15px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #d9534f;
+  color: #fff;
+  border: solid 1px #d9534f;
+  text-decoration: none;
+}
+
+.btn-danger:hover {
+  background-color: #b52b27;
+  border: solid 1px #b52b27;
+  color: #fff;
+}
+
+.full-width {
+  display: inline-block;
+  width: 100%;
+}
+
+.panel {
+  background-color: #eee;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.panel .panel-head {
+  background-color: #ddd;
+  padding: 15px 10px;
+}
+
+.panel .panel-head .panel-titel {
+  margin: 0;
+}
+
+.panel .panel-head .panel-desc {
+  top: 5px;
+  font-size: 13px;
+}
+
+.panel .panel-body {
+  padding: 10px;
+}
+
+.panel .panel-body input, .panel .panel-body textarea, .panel .panel-body select {
+  width: 100%;
+  padding: 3px 6px;
+  border: 1px solid #e4eaec;
+}
+
+.panel .panel-body label {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.panel .panel-body label input, .panel .panel-body label textarea, .panel .panel-body label select {
+  margin-top: 5px;
+}
+
+.left-nav {
+  width: 20%;
+  padding: 10px;
+  margin-right: -4px;
+  display: inline-block;
+  background-color: #eee;
+}
+
+.left-nav .logo {
+  background-color: #ddd;
+  margin: 10px 0px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.left-nav ul {
+  margin: 0px;
+  margin-top: 30px;
+  padding: 0px;
+}
+
+.left-nav ul li {
+  margin-bottom: 10px;
+}
+
+.main {
+  width: 80%;
+  margin-right: -4px;
+  padding: 15px;
+  display: inline-block;
+  background-color: #f3f3f3;
+  /*分頁設定*/
+}
+
+.main .pagebox {
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: auto;
+  width: 100%;
+}
+
+.main .pagebox li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.main .pagebox li a {
+  padding: 20px;
+  line-height: 45px;
+}
+
+.main .pagebox span {
+  padding: 20px;
+  line-height: 45px;
+  cursor: default;
+}
+
+.main .pagebox .active {
+  background-color: #333333;
+  color: #f3f7f7;
+  border-radius: 100%;
+}
+
+.main .top-nav {
+  padding: 0px 15px 10px 0px;
+  border-bottom: 1px solid #ddd;
+}
+
+.main .top-nav ul {
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+}
+
+.main .top-nav li {
+  display: inline-block;
+}
+
+.main .top-nav li::before {
+  content: "/";
+}
+
+.main .user {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+}
+
+.main .user .name {
+  display: inline-block;
+}
+
+.main .user .logout {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.main .container .header .title {
+  display: inline-block;
+}
+
+.main .container .header .add {
+  position: absolute;
+  top: 25%;
+  margin-left: 15px;
+}
+
+.main .container .search {
+  padding: 10px 0px;
+}
+
+.main .container .search .data-range {
+  display: inline-block;
+}
+
+.main .container .search .data-filter {
+  position: absolute;
+  right: 0px;
+  display: inline-block;
+}
+
+.main .container .content .table-box {
+  overflow-x: auto;
+}
+
+.main .container .content .data-table {
+  display: table;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.main .container .content .data-table .data-header {
+  display: table-header-group;
+}
+
+.main .container .content .data-table .data-row {
+  display: table-row;
+}
+
+.main .container .content .data-table .data-cell {
+  border-bottom: solid 1px #999;
+  display: table-cell;
+  padding: 5px 10px;
+}
+
+.main .container .content .data-table .data-cell-time {
+  min-width: 165px;
+}
+
+.main .container .content .data-table .data-cell-action {
+  min-width: 245px;
+  padding: 15px;
+}
+
+.main .container .content .data-table .data-cell-image {
+  max-width: 150px;
+}
+
+.main .container .content .post-left {
+  width: 75%;
+  margin-right: -4px;
+  display: inline-block;
+}
+
+.main .container .content .post-right {
+  width: 23%;
+  margin-left: 2%;
+  margin-right: -4px;
+  display: inline-block;
+}
+
+.main .container .content .post-bottom {
+  width: 100%;
+}
+
+.main .container .content .text-editor {
+  height: 268px;
+}
+
+/*# sourceMappingURL=admin.css.map */

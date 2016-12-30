@@ -1,0 +1,9 @@
+notes'
+                        <div class="form-group">
+                            <label for="name">Post Category</label>
+                            <select class="form-control" name="category_id">
+                                @foreach(TCG\Voyager\Models\Category::all() as $category)
+                                <option value="{{ $category->id }}" @if(isset($dataTypeContent->category_id) && $dataTypeContent->category_id == $category->id){{ 'selected="selected"' }}@endif>{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>

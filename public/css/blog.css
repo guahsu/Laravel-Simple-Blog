@@ -1,0 +1,377 @@
+@charset "UTF-8";
+/*共用顏色*/
+/*基準字體大小*/
+/*顏色設置(背景色、文字顏色(預設白))*/
+/*尺寸設置(寬度、高度)*/
+/*字體大小設置(尺寸比例、字寬設定)*/
+/*基礎按鈕樣式設定*/
+/*基礎標籤樣式設定*/
+/*全域設置*/
+* {
+  font-family: 'Oswald', 微軟正黑體;
+  position: relative;
+  vertical-align: top;
+  list-style: none;
+  box-sizing: border-box;
+  color: unset;
+}
+
+html {
+  width: 100%;
+  background-color: #999;
+}
+
+body {
+  padding: 20px 0px;
+  margin: auto;
+  text-align: center;
+  max-width: 1142px;
+  letter-spacing: 1px;
+  background-color: #f3f7f7;
+  color: #333333;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: auto;
+}
+
+h1 .english {
+  font-size: 24px;
+  font-weight: auto;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: auto;
+}
+
+h2 .english {
+  font-size: 16px;
+  font-weight: auto;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: auto;
+}
+
+h3 .english {
+  font-size: 12px;
+  font-weight: auto;
+}
+
+.color-primary {
+  background-color: #333333;
+  color: #f3f7f7;
+}
+
+.color-secondary {
+  background-color: #27232F;
+  color: #f3f7f7;
+}
+
+.color-accent {
+  background-color: #ffb336;
+  color: #333333;
+  font-weight: 500;
+}
+
+/*頁頭*/
+.header {
+  letter-spacing: 2px;
+}
+
+.header .logo-box {
+  width: auto;
+  height: 200px;
+}
+
+.header .logo-box .logo {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 20%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.header .web-title {
+  margin: 0px;
+}
+
+.header .web-desc {
+  margin-top: 5px;
+}
+
+/*連結選單*/
+.nav {
+  height: 65px;
+  overflow: hidden;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-top: dashed 1px rgba(0, 0, 0, 0.55);
+  border-bottom: dashed 1px rgba(0, 0, 0, 0.55);
+  margin-bottom: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.nav .menu-btn {
+  display: block;
+}
+
+.nav .nav-item {
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  margin: 15px 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.nav .nav-item:hover {
+  background-color: #666;
+  color: #f3f7f7;
+}
+
+/*連結按鈕開關*/
+.menu-open {
+  height: 265px;
+}
+
+.menu-open .menu-btn {
+  background-color: #666;
+  color: #f3f7f7;
+}
+
+/*主區塊設定*/
+.main {
+  height: 100%;
+  /*****左側主區塊*****/
+  /*****右側主區塊*****/
+}
+
+.main .main-left {
+  /*文章區塊*/
+  /*文章前後篇按鈕*/
+  /*文章留言區塊*/
+  /*分頁設定*/
+}
+
+.main .main-left .article {
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding: 10px 30px 30px 30px;
+  /*首頁預覽樣式*/
+  /*文章內容樣式*/
+}
+
+.main .main-left .article .art-img {
+  max-width: 100%;
+}
+
+.main .main-left .article .art-infos span {
+  margin: 0px 5px;
+}
+
+.main .main-left .article .art-content {
+  padding: 0px;
+  text-align: left;
+}
+
+.main .main-left .article .art-content .art-tags {
+  text-decoration: none;
+  margin-top: 40px;
+}
+
+.main .main-left .article .art-content .art-tags .tag {
+  display: inline-block;
+  height: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 32px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background-color: #e4e4e4;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.main .main-left .article:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+.main .main-left .art-prev, .main .main-left .art-next {
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  margin: 15px 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.main .main-left .art-prev:hover, .main .main-left .art-next:hover {
+  background-color: #666;
+  color: #f3f7f7;
+}
+
+.main .main-left .pagebox {
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: auto;
+  width: 100%;
+}
+
+.main .main-left .pagebox li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.main .main-left .pagebox li a {
+  padding: 20px;
+  line-height: 45px;
+}
+
+.main .main-left .pagebox span {
+  padding: 20px;
+  line-height: 45px;
+  cursor: default;
+}
+
+.main .main-left .pagebox .active {
+  background-color: #333333;
+  color: #f3f7f7;
+  border-radius: 100%;
+}
+
+.main .main-right {
+  /*側邊欄設定*/
+}
+
+.main .main-right .aside {
+  padding: 50px 0px;
+  top: 0px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  /*介紹*/
+  /*設定*/
+  /*標籤*/
+}
+
+.main .main-right .aside .author .author-img {
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: 100%;
+  background-color: #999;
+}
+
+.main .main-right .aside .author .author-info {
+  font-size: 14px;
+  padding: 0px 10px;
+}
+
+.main .main-right .aside h3 {
+  margin: 20px 0px 5px 0px;
+}
+
+.main .main-right .aside li {
+  font-size: 15px;
+  padding: 2px;
+}
+
+.main .main-right .aside .tag {
+  display: inline-block;
+  height: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 32px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background-color: #e4e4e4;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+/*頁尾設定*/
+.footer {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  background-color: #333;
+  color: #f3f7f7;
+  left: 0;
+  bottom: 0;
+  padding-top: 10px;
+}
+
+/*RWD設定*/
+@media screen and (min-width: 640px) {
+  body {
+    padding: 20px;
+  }
+  .nav {
+    height: 65px;
+  }
+  .nav .nav-item {
+    display: inline-block;
+  }
+  .nav .menu-btn {
+    display: none;
+  }
+  .main {
+    margin-bottom: 50px;
+  }
+  .main .main-left {
+    display: inline-block;
+    margin-right: -4px;
+    padding-right: 15px;
+    width: 80%;
+  }
+  .main .main-left .article .art-content {
+    padding: 10px 40px 0px 40px;
+    text-align: left;
+  }
+  .main .main-left .other-art .art-prev, .main .main-left .other-art .art-next {
+    text-align: center;
+    display: inline-block;
+    width: 45%;
+  }
+  .main .main-right {
+    width: 20%;
+    margin-right: -4px;
+    display: inline-block;
+  }
+}
+
+/*# sourceMappingURL=blog.css.map */
