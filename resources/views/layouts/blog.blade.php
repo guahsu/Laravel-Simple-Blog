@@ -75,6 +75,6 @@
 </main>
 <footer class="footer"><span class="copyright">{{ App\AppFunctions::data('Setting', 'footer') }}</span></footer>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script src="{{ asset('js/blog.js') }}"></script>
+<script src="{{ asset('js/menu.js') }}"></script>
 </body>
 </html>

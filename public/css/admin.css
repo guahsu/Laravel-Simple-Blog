@@ -27,7 +27,6 @@ body {
   background-color: #f3f7f7;
   color: #333333;
   background-color: #eee;
-  min-width: 700px;
 }
 
 h1 {
@@ -180,8 +179,12 @@ h3 .english {
   margin-top: 5px;
 }
 
+.panel .panel-body textarea {
+  resize: vertical;
+}
+
 .left-nav {
-  width: 20%;
+  width: 100%;
   padding: 10px;
   margin-right: -4px;
   display: inline-block;
@@ -210,7 +213,7 @@ h3 .english {
 }
 
 .main {
-  width: 80%;
+  width: 100%;
   margin-right: -4px;
   padding: 15px;
   display: inline-block;
@@ -276,7 +279,7 @@ h3 .english {
 }
 
 .main .user .name {
-  display: inline-block;
+  display: none;
 }
 
 .main .user .logout {
@@ -346,13 +349,13 @@ h3 .english {
 }
 
 .main .container .content .post-left {
-  width: 75%;
+  width: 100%;
   margin-right: -4px;
   display: inline-block;
 }
 
 .main .container .content .post-right {
-  width: 23%;
+  width: 100%;
   margin-left: 2%;
   margin-right: -4px;
   display: inline-block;
@@ -364,6 +367,66 @@ h3 .english {
 
 .main .container .content .text-editor {
   height: 268px;
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    padding: 20px;
+  }
+  .nav {
+    height: 65px;
+  }
+  .nav .nav-item {
+    display: inline-block;
+  }
+  .nav .menu-btn {
+    display: none;
+  }
+  .left-nav {
+    width: 20%;
+  }
+  .main {
+    width: 80%;
+  }
+  .main .user .name {
+    display: inline-block;
+  }
+  .main .container .content .post-left {
+    width: 75%;
+  }
+  .main .container .content .post-right {
+    width: 23%;
+  }
+}
+
+@media screen and (min-width: 721px) and (max-width: 960px) {
+  body {
+    padding: 20px;
+  }
+  .nav {
+    height: 65px;
+  }
+  .nav .nav-item {
+    display: inline-block;
+  }
+  .nav .menu-btn {
+    display: none;
+  }
+  .left-nav {
+    width: 100%;
+  }
+  .main {
+    width: 100%;
+  }
+  .main .user .name {
+    display: inline-block;
+  }
+  .main .container .content .post-left {
+    width: 75%;
+  }
+  .main .container .content .post-right {
+    width: 23%;
+  }
 }
 
 /*# sourceMappingURL=admin.css.map */
