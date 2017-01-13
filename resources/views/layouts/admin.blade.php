@@ -43,8 +43,8 @@
                 @yield('breadcrumbs')
             </ul>
             <div class="user">
-                <div class="name"><a href="#">Auth::user()->name</a></div>
-                <div class="logout"><a href="{{ asset('/logout') }}">Logout</a></div>
+                <div class="name"><a href="#">{{ Auth::user()->name }}</a></div>
+                <div class="logout"><a href="{{ asset('/admin/logout') }}">Logout</a></div>
             </div>
         </div>
         <div class="container">
