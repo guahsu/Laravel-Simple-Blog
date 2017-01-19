@@ -4,7 +4,7 @@
 | / front-end
 |-------------------------------------------------------------------------*/
   //Blog
-  Route::get('/', 'BlogController@main');
+  Route::get('/', 'BlogController@list');
   //search-category
   Route::get('/search/category/{category}', 'BlogController@searchCategory');
   //search-tag
@@ -15,12 +15,13 @@
 /*----------------------------------------------------------------------------
 | Auth
 |---------------------------------------------------------------------------*/
+Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
   /*--------------------------------------------------------------------------
   | backend
   |-------------------------------------------------------------------------*/
     //index
-    Route::get('/admin', 'PostController@main');
+    Route::get('/admin', 'PostController@list');
     //test
     Route::get('/admin/test', 'PostController@test');
     //logout
@@ -29,7 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
   | posts
   |-------------------------------------------------------------------------*/
     //posts-list
-    Route::get('/admin/posts', 'PostController@main');
+    Route::get('/admin/posts', 'PostController@list');
     //posts-create
     Route::get('/admin/posts/create', 'PostController@create');
     //posts-edit
@@ -44,7 +45,14 @@ Route::group(['middleware' => 'auth'], function () {
   /*--------------------------------------------------------------------------
   | Categories
   |-------------------------------------------------------------------------*/
-
+    //categories-list
+    Route::get('/admin/categories', 'CategoryController@list');
+    //categories-create
+    Route::post('/admin/categories/create', 'CategoryController@create');
+    //categories-edit
+    Route::post('/admin/categories/edit/{id}', 'CategoryController@edit');
+    //categories-delete
+    Route::get('/admin/categories/delete/{id}', 'CategoryController@delete');
   /*--------------------------------------------------------------------------
   | Menus
   |-------------------------------------------------------------------------*/
@@ -53,11 +61,3 @@ Route::group(['middleware' => 'auth'], function () {
   | Settings
   |-------------------------------------------------------------------------*/
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');

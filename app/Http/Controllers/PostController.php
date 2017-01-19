@@ -14,10 +14,10 @@ use Auth;
 class PostController extends Controller
 {
     //posts-list
-    public function main()
+    public function list()
     {
     	$posts = Post::orderby('id', 'desc')->paginate(10);
-    	return view('admin/posts/main', compact('posts'));
+    	return view('admin/posts/list', compact('posts'));
     }
 
     //posts-create

@@ -11,6 +11,7 @@
     <meta name="csrf_token" content="{{ csrf_token() }}" />
     <title>{{ App\AppFunctions::data('Setting', 'admin_title') }}@yield('pageTitle')</title>
     <!--CSS-->
+    <link rel="stylesheet" href="{{ asset('css/w3.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     @yield('pageCss')
@@ -30,10 +31,11 @@
     <div class="left-nav">
         <div class="logo"></div>
         <ul>
-            <li><a href="{{ asset('/admin/Posts') }}" class="btn full-width">Posts</a></li>
-            <li><a href="#" class="btn full-width">Media</a></li>
-            <li><a href="#" class="btn full-width">Users</a></li>
-            <li><a href="#" class="btn full-width">Settings</a></li>
+            <li><a href="{{ asset('/admin/posts') }}" class="btn full-width">Posts</a></li>
+            <li><a href="{{ asset('/admin/media') }}" class="btn full-width">Media</a></li>
+            <li><a href="{{ asset('/admin/menus') }}" class="btn full-width">Menus</a></li>
+            <li><a href="{{ asset('/admin/categories') }}" class="btn full-width">Categories</a></li>
+            <li><a href="{{ asset('/admin/settings') }}" class="btn full-width">Settings</a></li>
         </ul>
     </div>
     <main class="main">

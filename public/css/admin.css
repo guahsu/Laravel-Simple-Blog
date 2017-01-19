@@ -8,7 +8,6 @@
 /*基礎標籤樣式設定*/
 /*全域設置*/
 * {
-  font-family: 'Oswald', 微軟正黑體;
   position: relative;
   vertical-align: top;
   list-style: none;
@@ -85,6 +84,22 @@ h3 .english {
   text-decoration: none;
 }
 
+.btn-cancel {
+  padding: 5px 15px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #999999;
+  color: #fff;
+  border: solid 1px #999999;
+  text-decoration: none;
+}
+
+.btn-cancel:hover {
+  background-color: #737373;
+  border: solid 1px #737373;
+  color: #fff;
+}
+
 .btn-primary {
   padding: 5px 15px;
   text-align: center;
@@ -136,6 +151,11 @@ h3 .english {
 .full-width {
   display: inline-block;
   width: 100%;
+}
+
+.helf-width {
+  display: inline-block;
+  width: 45%;
 }
 
 .panel {
@@ -367,6 +387,52 @@ h3 .english {
 
 .main .container .content .text-editor {
   height: 268px;
+}
+
+.modal-area {
+  z-index: 3;
+  display: none;
+  padding-top: 100px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-area .modal-content {
+  margin: auto;
+  background-color: #fff;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  width: 600px;
+}
+
+.modal-area .modal-container {
+  padding: 15px;
+}
+
+.modal-area .modal-closebtn {
+  text-decoration: none;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: #999;
+  z-index: 999;
+}
+
+.modal-area .modal-closebtn:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-area .delete-message {
+  color: #d9534f;
 }
 
 @media screen and (min-width: 720px) {
