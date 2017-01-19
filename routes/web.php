@@ -4,7 +4,7 @@
 | / front-end
 |-------------------------------------------------------------------------*/
   //Blog
-  Route::get('/', 'BlogController@list');
+  Route::get('/', 'BlogController@lists');
   //search-category
   Route::get('/search/category/{category}', 'BlogController@searchCategory');
   //search-tag
@@ -21,7 +21,7 @@ Route::group(['middleware' => 'auth'], function () {
   | backend
   |-------------------------------------------------------------------------*/
     //index
-    Route::get('/admin', 'PostController@list');
+    Route::get('/admin', 'PostController@lists');
     //test
     Route::get('/admin/test', 'PostController@test');
     //logout
@@ -30,7 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
   | posts
   |-------------------------------------------------------------------------*/
     //posts-list
-    Route::get('/admin/posts', 'PostController@list');
+    Route::get('/admin/posts', 'PostController@lists');
     //posts-create
     Route::get('/admin/posts/create', 'PostController@create');
     //posts-edit
@@ -46,7 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
   | Categories
   |-------------------------------------------------------------------------*/
     //categories-list
-    Route::get('/admin/categories', 'CategoryController@list');
+    Route::get('/admin/categories', 'CategoryController@lists');
     //categories-create
     Route::post('/admin/categories/create', 'CategoryController@create');
     //categories-edit

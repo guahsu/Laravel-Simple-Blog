@@ -14,10 +14,10 @@ use App\Models\Category;
 class BlogController extends Controller
 {
     //
-    public function list()
+    public function lists()
     {
     	$posts = Post::orderby('id', 'desc')->paginate(5);
-    	return view('blog/list', compact('posts'));
+    	return view('blog/lists', compact('posts'));
     }
 
     public function post($slug)

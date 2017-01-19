@@ -8,10 +8,10 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    public function list()
+    public function lists()
     {
     	$categories = Category::orderby('name')->get();
-    	return view('admin/categories/list', compact('categories'));
+    	return view('admin/categories/lists', compact('categories'));
     }
 
     public function create()
