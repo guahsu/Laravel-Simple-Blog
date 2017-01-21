@@ -51,7 +51,7 @@ class BlogController extends Controller
         $id= Category::where('name', '=', $category)->value('id');
         $posts = Post::where('category', '=', $id)->orderby('id', 'desc')->paginate(5);
 
-        return view('blog/list', compact('posts', 'searchTitle'));
+        return view('blog/lists', compact('posts', 'searchTitle'));
     }
 
     public function searchTag($tag)
@@ -61,7 +61,7 @@ class BlogController extends Controller
         $post_tag = Post_tag::where('tag_id', '=', $id)->pluck('post_id')->toArray();
         $posts = Post::where('id', '=', $post_tag)->orderby('id', 'desc')->paginate(5);
 
-        return view('blog/list', compact('posts', 'searchTitle'));
+        return view('blog/lists', compact('posts', 'searchTitle'));
     }
 
 }

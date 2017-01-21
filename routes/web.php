@@ -60,4 +60,8 @@ Route::group(['middleware' => 'auth'], function () {
   /*--------------------------------------------------------------------------
   | Settings
   |-------------------------------------------------------------------------*/
+    //Settings-list
+    Route::get('/admin/settings', 'SettingController@lists');
+    //Settings-edit
+    Route::post('/admin/settings/edit/{id}', 'SettingController@edit');
 });

@@ -37,18 +37,17 @@
       <div class="data-cell">action</div>
     </div>
 
-    <div class="data-rows">
-      @foreach($categories as $category)
-      <div class="data-row" data-id="{{ $category->id }}">
-        <div class="data-cell" data-name="name">{{ $category->name }}</div>
-        <div class="data-cell" data-name="slug">{{ $category->slug }}</div>
-        <div class="data-cell data-cell-action">
-          <a id="edit" class="btn-primary" data-link="{{ asset('admin/categories/edit/' . $category->id) }}">Edit</a>
-          <a id="delete" class="btn-danger" data-link="{{ asset('admin/categories/delete/' . $category->id) }}">Delete</a>
-        </div>
+    @foreach($categories as $category)
+    <div class="data-row" data-id="{{ $category->id }}">
+      <div class="data-cell" data-name="name">{{ $category->name }}</div>
+      <div class="data-cell" data-name="slug">{{ $category->slug }}</div>
+      <div class="data-cell data-cell-action">
+        <a id="edit" class="btn-primary" data-link="{{ asset('admin/categories/edit/' . $category->id) }}">Edit</a>
+        <a id="delete" class="btn-danger" data-link="{{ asset('admin/categories/delete/' . $category->id) }}">Delete</a>
       </div>
-      @endforeach
     </div>
+    @endforeach
+
   </div>
 </div>
 
