@@ -69,12 +69,10 @@
     var modalType = $(this).attr('id');
     if(modalType==='edit'){
       var dataLink = $(this).attr('data-link');
-      var dataKey = $(this).parents('.data-row').find('div[data-name="key"]').text();
-      var dataValue = $(this).parents('.data-row').find('div[data-name="Vlaue"]').text();
+      var dataValue = $(this).parents('.data-row').find('[data-name="value"]').text();
       $('.modal-area').css('display', 'block');
       $('#modal-head').text(modalType);
-      $('#modal-body').html('<label>Key</label><input class="modal-input-name" value="' + dataKey + '" autofocus="autofocus" required="required" />' +
-                            '<label>Value</label><input class="modal-input-value" value="' + dataValue + '" autofocus="autofocus" required="required" />' );
+      $('#modal-body').html('<label>Value</label><br><input class="modal-input-value" value="' + dataValue + '" autofocus="autofocus" required="required" />' );
       $('#modal-footer').html('<a id="do-save" class="btn-success" data-url="'+ dataLink +'">SAVE</a><a class="btn-cancel do-close" href="#">CANCLE</a>');
     }
   });
@@ -87,7 +85,7 @@
 
   $(document).on("click", "#do-save", function(){
     var ajaxUrl = $(this).attr('data-url');
-    var ajaxData = { 'name': $('.modal-input-name').val(), 'value': $('.modal-input-value').val()};
+    var ajaxData = { 'value': $('.modal-input-value').val()};
     $.ajax({
       url: ajaxUrl,
       type: 'POST',
@@ -99,7 +97,7 @@
         }
       },
       success: function(data){
-          $('div[data-id="'+ data['id'] +'"]').find('div[data-name="value"]').text(data['slug']);
+          $('div[data-id="'+ data['id'] +'"]').find('[data-name="value"]').text(data['value']);
           $('.do-close').trigger('click');
 
       },

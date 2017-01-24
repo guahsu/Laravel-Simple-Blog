@@ -1,14 +1,14 @@
 @charset "UTF-8";
 /*共用顏色*/
 /*基準字體大小*/
+/*字體大小設置(尺寸比例、字寬設定)*/
 /*顏色設置(背景色、文字顏色(預設白))*/
 /*尺寸設置(寬度、高度)*/
-/*字體大小設置(尺寸比例、字寬設定)*/
 /*基礎按鈕樣式設定*/
 /*基礎標籤樣式設定*/
 /*全域設置*/
 * {
-  font-family: 'Oswald', 微軟正黑體;
+  font-family: 'Noto Serif', 微軟正黑體, serif;
   position: relative;
   vertical-align: top;
   list-style: none;
@@ -26,9 +26,20 @@ body {
   margin: auto;
   text-align: center;
   max-width: 1142px;
-  letter-spacing: 1px;
-  background-color: #f3f7f7;
-  color: #333333;
+  letter-spacing: 2px;
+  background-color: #ffffff;
+  color: #3a4145;
+}
+
+pre {
+  border: solid 1px #e1e1e1;
+  background-color: #f7fafb;
+  padding: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #50585d;
+  font-family: 'Open Sans', 微軟正黑體, sans-serif;
 }
 
 h1 {
@@ -42,7 +53,7 @@ h1 .english {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: auto;
 }
 
@@ -62,13 +73,13 @@ h3 .english {
 }
 
 .color-primary {
-  background-color: #333333;
-  color: #f3f7f7;
+  background-color: #3a4145;
+  color: #ffffff;
 }
 
 .color-secondary {
-  background-color: #27232F;
-  color: #f3f7f7;
+  background-color: #9eabb3;
+  color: #ffffff;
 }
 
 .color-accent {
@@ -170,6 +181,10 @@ h3 .english {
 }
 
 .main .main-left .article {
+  font-family: 'Noto Serif', 微軟正黑體, serif;
+  color: #3a4145;
+  text-align: left;
+  font-size: 16px;
   margin-bottom: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   -webkit-transition: 0.5s;
@@ -179,15 +194,32 @@ h3 .english {
   /*文章內容樣式*/
 }
 
+.main .main-left .article h2 {
+  margin: 0;
+  letter-spacing: -1px;
+}
+
 .main .main-left .article .art-img {
   max-width: 100%;
 }
 
 .main .main-left .article .art-infos span {
+  color: #9eabb3;
+  font-size: 14px;
   margin: 0px 5px;
 }
 
+.main .main-left .article .art-summary {
+  padding: 0px 40px 0px 40px;
+  line-height: 1.6em;
+}
+
+.main .main-left .article .art-header {
+  padding: 25px 40px 0px 40px;
+}
+
 .main .main-left .article .art-content {
+  font-size: 13px;
   padding: 0px;
   text-align: left;
 }
@@ -267,7 +299,7 @@ h3 .english {
 
 .main .main-left .pagebox .active {
   background-color: #333333;
-  color: #f3f7f7;
+  color: #ffffff;
   border-radius: 100%;
 }
 

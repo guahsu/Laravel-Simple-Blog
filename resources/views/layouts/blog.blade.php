@@ -11,7 +11,10 @@
 <title>{{ App\AppFunctions::data('Setting', 'title') }}@yield('pageTitle')</title>
 <!--CSS-->
 <link rel="stylesheet" href="{{ asset('css/blog.css') }}">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Serif">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-light.min.css">
+
 @yield('pageCss')
 <!--JS-->
 <script language="javascript" type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
@@ -39,10 +42,8 @@
 </header>
 <nav class="nav">
   <label class="nav-item menu-btn">- MENU - </label>
-  <li class="nav-item">nav-item1</li>
-  <li class="nav-item">nav-item2</li>
-  <li class="nav-item">nav-item3</li>
-  <li class="nav-item">nav-item4</li>
+  <a class="nav-item" href="/">BLOG</a>
+  <a class="nav-item" href="#" target="_blank">Portfolio</a>
 </nav>
 <main class="main">
  <div class="main-left">
@@ -75,6 +76,8 @@
 </main>
 <footer class="footer"><span class="copyright">{{ App\AppFunctions::data('Setting', 'footer') }}</span></footer>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script src="{{ asset('js/menu.js') }}"></script>
 </body>
 </html>

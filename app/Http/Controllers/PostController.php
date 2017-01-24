@@ -104,7 +104,8 @@ class PostController extends Controller
         if(empty($request['seoKeywords']) && !empty($request['postTag'])) {
             $seoKeywords = '';
             foreach ($request['postTag'] as $tag) {
-                $seoKeywords .= $tag . ', ';
+                $tagName = Tag::where('id', '=', $tag)->value('name');
+                $seoKeywords .= $tagName . ', ';
             }
             $post->seo_keywords = substr($seoKeywords, 0, -2);
         }else {

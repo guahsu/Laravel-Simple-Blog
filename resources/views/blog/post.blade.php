@@ -9,8 +9,8 @@
       @if(isset($post->image))
       	<img class="art-img" src="/img/{{ $post->image }}"/>
       @endif
-      <h2 class="art-title">{{ $post->title }}</h2>
       <div class="art-infos"><span class="art-time">{{ $post->created_at }}</span><span class="art-author">GuaHsu</span></div>
+      <h2 class="art-title">{{ $post->title }}</h2>
     </div>
     <div class="art-content">
       {!! $post->content !!}

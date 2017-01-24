@@ -17,15 +17,14 @@ class SettingController extends Controller
 
     public function edit($id)
     {
-    	$inputKey = Input::get('key');
     	$inputValue = Input::get('value');
-    	$category = Setting::find($id);
-    	$category->key = $inputKey;
-    	$category->Value = $inputValue;
-    	$category->save();
+    	$settings = Setting::find($id);
+    	$settings->value = $inputValue;
+    	$settings->save();
+
 
     	$returnData['id'] = $id;
-		$returnData['value'] = $inputValue ;
+		$returnData['value'] = $inputValue;
 
     	return $returnData;
     }

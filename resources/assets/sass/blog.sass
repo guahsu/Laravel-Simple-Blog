@@ -1,8 +1,8 @@
 /*共用顏色*/
-$color_white: #f3f7f7
+$color_white: #ffffff
 $color_black: #333333
-$color_primary: #333333
-$color_secondary: #27232F
+$color_primary: #3a4145
+$color_secondary: #9eabb3
 $color_accent: #ffb336
 $color_font_black: #4D545D
 $color_font_orange: #EF6733
@@ -10,6 +10,11 @@ $color_font_green: #00b1b3
 
 /*基準字體大小*/
 $base_font_size: 10px
+
+/*字體大小設置(尺寸比例、字寬設定)*/
+@mixin fontSet($font_size:1, $font_weight:auto)
+  font-size: $base_font_size * $font_size
+  font-weight: $font_weight
 
 /*顏色設置(背景色、文字顏色(預設白))*/
 @mixin colorSet($back_color, $front_color:$color_white)
@@ -21,12 +26,7 @@ $base_font_size: 10px
   width: $w
   height: $h
 
-/*字體大小設置(尺寸比例、字寬設定)*/  
-@mixin fontSet($font_size:1, $font_weight:auto)
-  font-size: $base_font_size * $font_size
-  font-weight: $font_weight
-
-/*基礎按鈕樣式設定*/  
+/*基礎按鈕樣式設定*/
 @mixin button()
   padding: 5px
   padding-left: 15px
@@ -39,8 +39,8 @@ $base_font_size: 10px
   &:hover
     background-color: #666
     color: #f3f7f7
-  
-/*基礎標籤樣式設定*/  
+
+/*基礎標籤樣式設定*/
 @mixin tag()
   display: inline-block
   height: 32px
@@ -58,7 +58,7 @@ $base_font_size: 10px
 /*全域設置*/
 *
   // border: solid 1px #777
-  font-family: 'Oswald', 微軟正黑體
+  font-family: 'Noto Serif', 微軟正黑體, serif
   position: relative
   vertical-align: top
   list-style: none
@@ -74,32 +74,41 @@ body
   margin: auto
   text-align: center
   max-width: 1142px
-  letter-spacing: 1px
+  letter-spacing: 2px
   +colorSet($color_white, $color_primary)
- 
+
+pre
+  border: solid 1px #e1e1e1
+  background-color: #f7fafb
+  padding: 10px
+
+h1, h2, h3, h4, h5, h6
+  color: #50585d
+  font-family: 'Open Sans', 微軟正黑體, sans-serif
+
 h1
   +fontSet(4)
   .english
     +fontSet(2.4)
 h2
-  +fontSet(3)
+  +fontSet(2.4)
   .english
     +fontSet(1.6)
 h3
   +fontSet(2)
   .english
-    +fontSet(1.2)  
+    +fontSet(1.2)
 
 .color-primary
-  +colorSet($color_primary)    
+  +colorSet($color_primary)
 .color-secondary
   +colorSet($color_secondary)
 .color-accent
-  +colorSet($color_accent, $color_black) 
-  font-weight: 500     
+  +colorSet($color_accent, $color_black)
+  font-weight: 500
 
 /*頁頭*/
-.header 
+.header
   letter-spacing: 2px
   .logo-box
     +size(auto, 200px)
@@ -137,27 +146,41 @@ h3
   .menu-btn
     background-color: #666
     color: #f3f7f7
-    
+
 /*主區塊設定*/
 .main
-  height: 100%  
+  height: 100%
   /*****左側主區塊*****/
   .main-left
     /*文章區塊*/
-    .article    
+    .article
+      font-family: 'Noto Serif', 微軟正黑體, serif
+      color: $color_primary
+      text-align: left
+      font-size: 16px
       margin-bottom: 20px
       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
       transition: 0.5s
       padding: 10px 30px 30px 30px
+      h2
+        margin: 0
+        letter-spacing: -1px
       /*首頁預覽樣式*/
       .art-img
         max-width: 100%
       .art-infos
         span
+          color: $color_secondary
+          font-size: 14px
           margin: 0px 5px
       .art-summary
+        padding: 0px 40px 0px 40px
+        line-height: 1.6em
       /*文章內容樣式*/
+      .art-header
+        padding: 25px 40px 0px 40px
       .art-content
+        font-size: 13px
         padding: 0px
         text-align: left
         .art-tags
@@ -167,13 +190,13 @@ h3
             +tag()
             margin: 5px
       &:hover
-        box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22)  
+        box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22)
     /*文章前後篇按鈕*/
     .art-prev, .art-next
       +button()
       display: block
       text-align: left
-      text-overflow: ellipsis 
+      text-overflow: ellipsis
       overflow: hidden
       white-space: nowrap
     /*文章留言區塊*/
@@ -197,17 +220,17 @@ h3
       .active
         background-color: $color_black
         color: $color_white
-        border-radius: 100%  
+        border-radius: 100%
   /*****右側主區塊*****/
-  .main-right        
+  .main-right
     /*側邊欄設定*/
-    .aside 
+    .aside
       padding: 50px 0px
-      top: 0px    
+      top: 0px
       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
       /*介紹*/
       .author
-        .author-img      
+        .author-img
           +size(100px, 100px)
           left: 50%
           transform: translateX(-50%)
@@ -225,7 +248,7 @@ h3
       /*標籤*/
       .tag
         +tag()
-    
+
 /*頁尾設定*/
 .footer
   position: absolute
@@ -235,7 +258,7 @@ h3
   left: 0
   bottom: 0
   padding-top: 10px
-  
+
 /*RWD設定*/
 @media screen and (min-width: 640px)
   body
@@ -245,10 +268,10 @@ h3
     .nav-item
       display: inline-block
     .menu-btn
-      display: none    
+      display: none
   .main
-    margin-bottom: 50px    
-    .main-left      
+    margin-bottom: 50px
+    .main-left
       display: inline-block
       //非常重要，inline-block會產生4px的mr!!
       margin-right: -4px
