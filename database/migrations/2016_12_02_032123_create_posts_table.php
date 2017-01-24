@@ -18,7 +18,8 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('excerpt');
-            $table->text('content');
+            $table->text('content_text');
+            $table->text('content_html');
             $table->string('image')->nullable();
             $table->string('slug')->unique();
             $table->string('seo_title')->nullable();

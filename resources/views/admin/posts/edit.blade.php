@@ -5,7 +5,7 @@
 
 @section('pageCss')
 <!-- Page Css -->
-<link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
+ {!! editor_css() !!}
 @stop
 
 @section('breadcrumbs')
@@ -41,8 +41,8 @@
             <div class="panel-head">
                 <h3 class="panel-titel">Post Content</h3>
             </div>
-            <div class="panel-body">
-                <textarea name="postContent" class="text-editor">{{ old('postContent', $post->content) }}</textarea>
+            <div id="mdeditor" class="panel-body">
+                <textarea>{{ old('postContent', $post->content_text) }}</textarea>
             </div>
         </div>
         <!-- Post Excerpt -->
@@ -129,12 +129,13 @@
     <!-- Save Button -->
     <button type="submit" id="save" class="btn full-width">SAVE</button>
 </form>
-@include('mceImageUpload::upload_form')
+
 @stop
 
 @section('pageJs')
 <!-- Page JS -->
-<script language="javascript" type="text/javascript" src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
+{!! editor_js() !!}
+{!! editor_config('mdeditor') !!}
 <script language="javascript" type="text/javascript" src="{{ asset('js/select2.full.min.js') }}"></script>
 <script type="text/javascript">
 //Select
@@ -147,25 +148,5 @@ $(".js-example-placeholder-single").select2({
     placeholder: "Select state",
     allowClear: true
 });
-
-//TextArea
-tinymce.init({
-    menubar: false,
-    selector: 'textarea.text-editor',
-    plugins: 'link, image, code, youtube, giphy, codesample, textcolor, colorpicker',
-    extended_valid_elements: 'input[onclick|value|style|type]',
-    relative_urls: false,
-    file_browser_callback: function(field_name, url, type, win) {
-        if (type == 'image') $('#formUpload input').click();
-    },
-    toolbar: 'styleselect bold italic underline | codesample | forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | link image youtube giphy | code ',
-    convert_urls: false,
-    image_caption: true,
-    image_title: true
-});
-
-$('#save').click(function() {
-    tinyMCE.triggerSave();
-})
 </script>
 @stop

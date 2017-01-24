@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/w3.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    {!! editor_css() !!}
     @yield('pageCss')
     <!--JS-->
     <script language="javascript" type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>

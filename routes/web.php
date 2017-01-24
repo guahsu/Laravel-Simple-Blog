@@ -41,7 +41,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/posts/delete/{id}', 'PostController@delete');
     //posts-addTag
     Route::post('admin/post/addTag', 'PostController@addTag');
-
   /*--------------------------------------------------------------------------
   | Categories
   |-------------------------------------------------------------------------*/

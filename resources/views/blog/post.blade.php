@@ -13,7 +13,7 @@
       <h2 class="art-title">{{ $post->title }}</h2>
     </div>
     <div class="art-content">
-      {!! $post->content !!}
+      {!! $post->content_html !!}
       <div class="art-tags">
         <p>CATEGORY: <a href="{{ asset('search/category/'.$category) }}">{{ $category }}</a></p>
         <p>TAGS:</p>

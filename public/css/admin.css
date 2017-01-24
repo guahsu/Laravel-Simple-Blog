@@ -203,6 +203,10 @@ h3 .english {
   resize: vertical;
 }
 
+#mdEditor {
+  z-index: 999;
+}
+
 .left-nav {
   width: 100%;
   padding: 10px;

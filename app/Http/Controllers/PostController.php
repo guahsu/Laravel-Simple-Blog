@@ -49,8 +49,6 @@ class PostController extends Controller
         $this->validate($request, [
             'postTitle' => 'required|unique:posts,title,' . $request['id'],
             'postSlug' => 'unique:posts,slug,' . $request['id'],
-            'postContent' => 'required',
-            'postExcerpt' => 'required',
         ]);
 
         //storeType: set create or edit for this post.
@@ -62,7 +60,8 @@ class PostController extends Controller
 
         //base post value (required values)
         $post->title   = $request['postTitle'];
-        $post->content = $request['postContent'];
+        $post->content_text = $request['postTextContent'];
+        $post->content_html = $request['postHtmlContent'];
         $post->status  = $request['postStatus'];
         $post->excerpt = $request['postExcerpt'];
 
