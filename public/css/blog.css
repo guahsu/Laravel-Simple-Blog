@@ -6,19 +6,36 @@
 /*尺寸設置(寬度、高度)*/
 /*基礎按鈕樣式設定*/
 /*基礎標籤樣式設定*/
+.cat {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+}
+
+.tag {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #e4e4e4;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  line-height: 32px;
+}
+
 /*全域設置*/
 * {
   font-family: 'Noto Serif', 微軟正黑體, serif;
   position: relative;
   vertical-align: top;
-  list-style: none;
   box-sizing: border-box;
   color: unset;
 }
 
 html {
   width: 100%;
-  background-color: #999;
+  background-color: #e6e6e6;
 }
 
 body {
@@ -39,37 +56,8 @@ pre {
 
 h1, h2, h3, h4, h5, h6 {
   color: #50585d;
+  margin: 10px 0px;
   font-family: 'Open Sans', 微軟正黑體, sans-serif;
-}
-
-h1 {
-  font-size: 40px;
-  font-weight: auto;
-}
-
-h1 .english {
-  font-size: 24px;
-  font-weight: auto;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: auto;
-}
-
-h2 .english {
-  font-size: 16px;
-  font-weight: auto;
-}
-
-h3 {
-  font-size: 20px;
-  font-weight: auto;
-}
-
-h3 .english {
-  font-size: 12px;
-  font-weight: auto;
 }
 
 .color-primary {
@@ -91,30 +79,23 @@ h3 .english {
 /*頁頭*/
 .header {
   letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
-.header .logo-box {
-  width: auto;
-  height: 200px;
-}
-
-.header .logo-box .logo {
-  width: 100px;
-  height: 100px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border-radius: 20%;
-  background-color: rgba(0, 0, 0, 0.2);
+.header .web-img {
+  max-width: 200px;
 }
 
 .header .web-title {
   margin: 0px;
 }
 
+.header .web-title a {
+  text-decoration: none;
+}
+
 .header .web-desc {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 /*連結選單*/
@@ -140,6 +121,7 @@ h3 .english {
 }
 
 .nav .nav-item {
+  display: block;
   padding: 5px;
   padding-left: 15px;
   padding-right: 15px;
@@ -158,12 +140,43 @@ h3 .english {
 
 /*連結按鈕開關*/
 .menu-open {
-  height: 265px;
+  height: 160px;
 }
 
 .menu-open .menu-btn {
   background-color: #666;
   color: #f3f7f7;
+}
+
+/**/
+blockquote {
+  color: #666;
+  border-left: 4px solid #ddd;
+  padding-left: 20px;
+  margin-left: 0;
+  font-style: italic;
+  font-size: 90%;
+  margin: 0 0 10px;
+}
+
+code {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #f6f6f6;
+  padding: 0px 4px;
+  margin: 0px 2px;
+  font-size: 90%;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+pre code {
+  border: unset;
+  border-radius: unset;
+  padding: unset;
+  margin: unset;
 }
 
 /*主區塊設定*/
@@ -205,7 +218,7 @@ h3 .english {
 
 .main .main-left .article .art-infos span {
   color: #9eabb3;
-  font-size: 14px;
+  font-size: 15px;
   margin: 0px 5px;
 }
 
@@ -219,30 +232,21 @@ h3 .english {
 }
 
 .main .main-left .article .art-content {
-  font-size: 13px;
+  font-size: 15px;
+  line-height: 1.6em;
   padding: 0px;
   text-align: left;
 }
 
-.main .main-left .article .art-content .art-tags {
-  text-decoration: none;
-  margin-top: 40px;
+.main .main-left .article .art-content img {
+  max-width: 100%;
+  border: solid 1px #dcdcdc;
+  padding: 5px;
 }
 
-.main .main-left .article .art-content .art-tags .tag {
-  display: inline-block;
-  height: 32px;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.6);
-  line-height: 32px;
-  padding: 0 12px;
-  border-radius: 16px;
-  background-color: #e4e4e4;
-  margin-bottom: 5px;
-  margin-right: 5px;
+.main .main-left .article .art-content .art-tags {
   text-decoration: none;
-  margin: 5px;
+  margin-top: 70px;
 }
 
 .main .main-left .article:hover {
@@ -304,6 +308,7 @@ h3 .english {
 }
 
 .main .main-right {
+  list-style: none;
   /*側邊欄設定*/
 }
 
@@ -313,17 +318,11 @@ h3 .english {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   /*介紹*/
   /*設定*/
-  /*標籤*/
 }
 
 .main .main-right .aside .author .author-img {
   width: 100px;
   height: 100px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  border-radius: 100%;
-  background-color: #999;
 }
 
 .main .main-right .aside .author .author-info {
@@ -340,35 +339,21 @@ h3 .english {
   padding: 2px;
 }
 
-.main .main-right .aside .tag {
-  display: inline-block;
-  height: 32px;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.6);
-  line-height: 32px;
-  padding: 0 12px;
-  border-radius: 16px;
-  background-color: #e4e4e4;
-  margin-bottom: 5px;
-  margin-right: 5px;
-  text-decoration: none;
-}
-
 /*頁尾設定*/
 .footer {
   position: absolute;
   width: 100%;
   height: 40px;
-  background-color: #333;
+  background-color: #666;
   color: #f3f7f7;
   left: 0;
   bottom: 0;
   padding-top: 10px;
+  font-size: 13px;
 }
 
 /*RWD設定*/
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 890px) {
   body {
     padding: 20px;
   }

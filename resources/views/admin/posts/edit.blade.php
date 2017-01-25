@@ -5,7 +5,8 @@
 
 @section('pageCss')
 <!-- Page Css -->
- {!! editor_css() !!}
+<link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
+{!! editor_css() !!}
 @stop
 
 @section('breadcrumbs')
@@ -41,7 +42,7 @@
             <div class="panel-head">
                 <h3 class="panel-titel">Post Content</h3>
             </div>
-            <div id="mdeditor" class="panel-body">
+            <div id="mdeditor">
                 <textarea>{{ old('postContent', $post->content_text) }}</textarea>
             </div>
         </div>
@@ -67,6 +68,7 @@
                 <input name="postSlug" placeholder="slug" value="{{ old('postSlug', $post->slug) }}" />
                 <label>Post Status</label>
                 <select name="postStatus">
+                    <option></option>
                     <option value="PUBLISHED"@if(old('postStatus', $post->status) == 'PUBLISHED'){!! 'selected="selected"' !!}@endif>PUBLISHED</option>
                     <option value="DRAFT"@if(old('postStatus', $post->status) == 'DRAFT'){!! 'selected="selected"' !!}@endif>DRAFT</option>
                     <option value="PENDING"@if(old('postStatus', $post->status) == 'PENDING'){!! 'selected="selected"' !!}@endif>PENDING</option>

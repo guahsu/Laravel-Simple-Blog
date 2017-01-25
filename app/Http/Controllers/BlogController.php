@@ -16,13 +16,13 @@ class BlogController extends Controller
     //
     public function lists()
     {
-    	$posts = Post::orderby('id', 'desc')->paginate(5);
+    	$posts = Post::where('status', '=', 'PUBLISHED')->orderby('id', 'desc')->paginate(5);
     	return view('blog/lists', compact('posts'));
     }
 
     public function post($slug)
     {
-        $post = Post::where('slug', $slug)->first();
+        $post = Post::where('slug', $slug)->where('status', '=', 'PUBLISHED')->first();
         $prevPostId = Post::where('id', '<', $post->id)->max('id');
         $nextPostId = Post::where('id', '>', $post->id)->min('id');
 

@@ -30,19 +30,13 @@
 <body>
 
 <header class="header">
-  <div class="logo-box">
-    <div class="logo">
-      <a href="/">
-        <img class="art-img" src="/img/{{ App\AppFunctions::data('Setting', 'logo') }}"/>
-      </a>
-    </div>
-  </div>
-  <h1 class="web-title">{{ App\AppFunctions::data('Setting', 'title') }}</h1>
+  <img class="web-img" src="{{ asset(App\AppFunctions::data('Setting', 'logo')) }}"/>
+  <h1 class="web-title"><a href="/">{{ App\AppFunctions::data('Setting', 'title') }}</a></h1>
   <h3 class="web-desc">{{ App\AppFunctions::data('Setting', 'description') }}</h3>
 </header>
 <nav class="nav">
   <label class="nav-item menu-btn">- MENU - </label>
-  <a class="nav-item" href="/">BLOG</a>
+  <a class="nav-item" href="/">Blog</a>
   <a class="nav-item" href="#" target="_blank">Portfolio</a>
 </nav>
 <main class="main">
@@ -52,7 +46,7 @@
  <div class="main-right">
   <aside class="aside">
     <div class="author">
-      <div class="author-img"><img src="/img/{{ App\AppFunctions::data('Setting', 'author_pic') }}"/></div>
+     <img class="author-img" src="{{ asset(App\AppFunctions::data('Setting', 'author_pic')) }}"/>
       <div class="author-info">
         <h3 class="name">{{ App\AppFunctions::data('Setting', 'author_name') }}</h3>
         <span class="desc">{{ App\AppFunctions::data('Setting', 'author_desc') }}</span>
@@ -63,14 +57,10 @@
     <li class="cat"><a href="{{ asset('search/category/'.$category) }}">{{ $category }}</a></li>
     @endforeach
 
-    <h3>TAGS</h3>
+    <h3>Tags</h3>
     @foreach(App\AppFunctions::data('Tag', '') as $tag)
     <a class="tag" href="{{ asset('search/tag/'.$tag) }}">{{ $tag }}</a>
     @endforeach
-    <h3>TIME</h3>
-    <li class="time"><a href="#">2016-11 (5)</a></li>
-    <li class="time"><a href="#">2016-10 (1)</a></li>
-    <li class="time"><a href="#">2016-09 (2)</a></li>
   </aside>
 </div>
 </main>

@@ -2,7 +2,6 @@
 @section('metaImg') @if(isset($post->image)){{ asset('/img/' . $post->image) }}@endif @stop
 @section('metaDesc', $post->seo_description)
 @section('pageTitle', $post->title)
-
 @section('containerContent')
   <article class="article">
     <div class="art-header">
@@ -15,11 +14,12 @@
     <div class="art-content">
       {!! $post->content_html !!}
       <div class="art-tags">
-        <p>CATEGORY: <a href="{{ asset('search/category/'.$category) }}">{{ $category }}</a></p>
-        <p>TAGS:</p>
+        <h4>CATEGORY: <a class="cat" href="{{ asset('search/category/'.$category) }}">{{ $category }}</a></h4>
+        <h4>TAGS:
         @foreach($tags as $id => $name)
         @if(in_array($id, old('postTag', $post_tag)))<a class="tag" href="{{ asset('search/tag/'.$name) }}">{{ $name }}</a>@endif
         @endforeach
+        </h4>
       </div>
     </div>
   </article>

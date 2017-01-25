@@ -199,10 +199,6 @@ h3 .english {
   margin-top: 5px;
 }
 
-.panel .panel-body textarea {
-  resize: vertical;
-}
-
 #mdEditor {
   z-index: 999;
 }

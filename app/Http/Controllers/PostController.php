@@ -62,8 +62,14 @@ class PostController extends Controller
         $post->title   = $request['postTitle'];
         $post->content_text = $request['postTextContent'];
         $post->content_html = $request['postHtmlContent'];
-        $post->status  = $request['postStatus'];
         $post->excerpt = $request['postExcerpt'];
+
+        //postStatus: if postStatus is empty, default status is 'DRAFT'
+        if(empty($request['postStatus']))  {
+            $post->status = 'DRAFT';
+        }else {
+            $post->status = $request['postStatus'];
+        }
 
         //postSlug: if postSlug is empty, use postTitle
         if(empty($request['postSlug']))  {

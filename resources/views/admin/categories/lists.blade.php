@@ -127,11 +127,11 @@
           $('div[data-id="'+ data['id'] +'"]').find('div[data-name="slug"]').text(data['slug']);
           $('.do-close').trigger('click');
         }
-        // if(data['type']==='error'){
-        //   console.log(data['message']);
-        //   alert(data['message']);
-        //   $('.do-close').trigger('click');
-        // }
+        if(data['type']==='error'){
+          console.log(data['message']);
+          alert(data['message']);
+          $('.do-close').trigger('click');
+        }
 
       },
       error: function(data){
