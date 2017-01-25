@@ -55,6 +55,7 @@ $base_font_size: 10px
   margin-right: 5px
   text-decoration: none
   line-height: 32px
+  word-break: normal
 /*全域設置*/
 *
   // border: solid 1px #777
@@ -63,6 +64,7 @@ $base_font_size: 10px
   vertical-align: top
   box-sizing: border-box
   color: unset
+  word-break: break-all
 
 html
   width: 100%
@@ -185,6 +187,7 @@ pre
       .art-summary
         padding: 0px 40px 0px 40px
         line-height: 1.6em
+        word-break: break-all
       /*文章內容樣式*/
       .art-header
         padding: 25px 40px 0px 40px
@@ -197,9 +200,9 @@ pre
           max-width: 100%
           border: solid 1px #dcdcdc
           padding: 5px
-        .art-tags
-          text-decoration: none
-          margin-top: 70px
+      .art-tags
+        text-decoration: none
+        margin-top: 70px
       &:hover
         box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22)
     /*文章前後篇按鈕*/

@@ -22,6 +22,7 @@
   margin-right: 5px;
   text-decoration: none;
   line-height: 32px;
+  word-break: normal;
 }
 
 /*全域設置*/
@@ -31,6 +32,7 @@
   vertical-align: top;
   box-sizing: border-box;
   color: unset;
+  word-break: break-all;
 }
 
 html {
@@ -225,6 +227,7 @@ pre code {
 .main .main-left .article .art-summary {
   padding: 0px 40px 0px 40px;
   line-height: 1.6em;
+  word-break: break-all;
 }
 
 .main .main-left .article .art-header {
@@ -244,7 +247,7 @@ pre code {
   padding: 5px;
 }
 
-.main .main-left .article .art-content .art-tags {
+.main .main-left .article .art-tags {
   text-decoration: none;
   margin-top: 70px;
 }

@@ -1,14 +1,14 @@
 @extends('layouts.blog')
 @section('metaImg') @if(isset($post->image)){{ asset('/img/' . $post->image) }}@endif @stop
 @section('metaDesc', $post->seo_description)
-@section('pageTitle', $post->title)
+@section('pageTitle', '-'.$post->title)
 @section('containerContent')
   <article class="article">
     <div class="art-header">
       @if(isset($post->image))
       	<img class="art-img" src="/img/{{ $post->image }}"/>
       @endif
-      <div class="art-infos"><span class="art-time">{{ $post->created_at }}</span><span class="art-author">GuaHsu</span></div>
+      <div class="art-infos"><span class="art-time">{{ $post->created_at }}</span></div>
       <h2 class="art-title">{{ $post->title }}</h2>
     </div>
     <div class="art-content">

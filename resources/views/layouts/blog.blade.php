@@ -17,6 +17,14 @@
 
 @yield('pageCss')
 <!--JS-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-84594235-3', 'auto');
+  ga('send', 'pageview');
+</script>
 <script language="javascript" type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
 <!--
 <script language="javascript" type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -30,14 +38,14 @@
 <body>
 
 <header class="header">
-  <img class="web-img" src="{{ asset(App\AppFunctions::data('Setting', 'logo')) }}"/>
+  <a href="/"><img class="web-img" src="{{ asset(App\AppFunctions::data('Setting', 'logo')) }}"/></a>
   <h1 class="web-title"><a href="/">{{ App\AppFunctions::data('Setting', 'title') }}</a></h1>
   <h3 class="web-desc">{{ App\AppFunctions::data('Setting', 'description') }}</h3>
 </header>
 <nav class="nav">
   <label class="nav-item menu-btn">- MENU - </label>
   <a class="nav-item" href="/">Blog</a>
-  <a class="nav-item" href="#" target="_blank">Portfolio</a>
+  <a class="nav-item" href="https://demo.guastudio.com" target="_blank">Portfolio</a>
 </nav>
 <main class="main">
  <div class="main-left">
