@@ -1,6 +1,6 @@
 @extends('layouts.blog')
 @section('metaImg','imgLink')
-@section('metaDesc','descText')
+@section('metaDesc','不懂就學，背不起來的就寫下來')
 
 @section('containerContent')
 	@foreach($posts as $post)
