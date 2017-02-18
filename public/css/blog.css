@@ -320,6 +320,7 @@ pre code {
   top: 0px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   /*介紹*/
+  /*cate & tag*/
   /*設定*/
 }
 
@@ -331,6 +332,11 @@ pre code {
 .main .main-right .aside .author .author-info {
   font-size: 14px;
   padding: 0px 10px;
+}
+
+.main .main-right .aside .tag span {
+  vertical-align: super;
+  font-size: 0.8em;
 }
 
 .main .main-right .aside h3 {

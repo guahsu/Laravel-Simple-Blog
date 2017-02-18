@@ -2,6 +2,7 @@
 namespace App;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Setting;
@@ -22,16 +23,22 @@ class AppFunctions
 		}
 
 		if($table === 'Tag'){
-			$tags = Tag::pluck('name', 'id');
+			$tags = DB::table('tags')
+					->join('post_tag', 'tags.id', '=', 'post_tag.tag_id')
+					->selectRaw('tags.id, tags.name, count(post_tag.tag_id) tag_cnt')
+					->groupBy('tags.id')
+					->get();
 			return $tags;
 		}
 
 		if($table === 'Category'){
-			$categories = Category::pluck('name', 'id');
+			$categories = DB::table('categories')
+						->join('posts', 'categories.id', '=', 'posts.category')
+						->selectRaw('categories.id, categories.name, count(posts.category) cate_cnt')
+						->groupBy('categories.id')
+						->get();
 			return $categories;
 		}
-
-
 
 	}
 }

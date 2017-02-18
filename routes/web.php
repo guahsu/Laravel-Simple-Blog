@@ -12,6 +12,8 @@
   //article
   Route::get('/post/{slug}', 'BlogController@post');
 
+  //timeline
+  Route::get('/timeline', 'BlogController@timeline');
 /*----------------------------------------------------------------------------
 | Auth
 |---------------------------------------------------------------------------*/

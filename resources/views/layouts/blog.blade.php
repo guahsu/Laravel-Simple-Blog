@@ -60,14 +60,20 @@
         <span class="desc">{{ App\AppFunctions::data('Setting', 'author_desc') }}</span>
       </div>
     </div>
+
     <h3>Categories</h3>
-    @foreach(App\AppFunctions::data('Category', '') as $id => $category)
-    <li class="cat"><a href="{{ asset('search/category/'.$category) }}">{{ $category }}</a></li>
+    @foreach(App\AppFunctions::data('Category', '') as $category)
+    <li class="cat">
+      <a href="{{ asset('search/category/'.$category->name) }}">{{ $category->name }}
+      <span>({{ $category->cate_cnt }})</span>
+      </a>
+    </li>
     @endforeach
 
     <h3>Tags</h3>
     @foreach(App\AppFunctions::data('Tag', '') as $tag)
-    <a class="tag" href="{{ asset('search/tag/'.$tag) }}">{{ $tag }}</a>
+    <a class="tag" href="{{ asset('search/tag/'.$tag->name) }}">
+    {{ $tag->name }}<span>({{ $tag->tag_cnt }})</span></a>
     @endforeach
   </aside>
 </div>

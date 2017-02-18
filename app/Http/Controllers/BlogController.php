@@ -48,8 +48,8 @@ class BlogController extends Controller
     public function searchCategory($category)
     {
         $searchTitle = 'Search Result:';
-        $id= Category::where('name', '=', $category)->value('id');
-        $posts = Post::where('category', '=', $id)->orderby('id', 'desc')->paginate(5);
+        $id= Category::where('name', '=', $category)->pluck('id');
+        $posts = Post::whereIn('category', $id)->orderby('id', 'desc')->paginate(5);
 
         return view('blog/lists', compact('posts', 'searchTitle'));
     }
@@ -59,9 +59,18 @@ class BlogController extends Controller
         $searchTitle = 'Search Result:';
         $id = Tag::where('name', '=', $tag)->value('id');
         $post_tag = Post_tag::where('tag_id', '=', $id)->pluck('post_id')->toArray();
-        $posts = Post::where('id', '=', $post_tag)->orderby('id', 'desc')->paginate(5);
+        $posts = Post::whereIn('id', $post_tag)->orderby('id', 'desc')->paginate(5);
 
         return view('blog/lists', compact('posts', 'searchTitle'));
+    }
+
+    public function timeline()
+    {
+        $posts = Post::latest()->get()
+                ->groupBy(function($item){
+                  return $item->created_at->format('Y-m');
+                });
+        return dd($posts);
     }
 
 }
