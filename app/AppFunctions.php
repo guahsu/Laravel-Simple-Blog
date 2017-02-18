@@ -26,7 +26,7 @@ class AppFunctions
 			$tags = DB::table('tags')
 					->join('post_tag', 'tags.id', '=', 'post_tag.tag_id')
 					->selectRaw('tags.id, tags.name, count(post_tag.tag_id) tag_cnt')
-					->groupBy('tags.id')
+					->groupBy('tags.id', 'tags.name')
 					->get();
 			return $tags;
 		}
@@ -35,7 +35,7 @@ class AppFunctions
 			$categories = DB::table('categories')
 						->join('posts', 'categories.id', '=', 'posts.category')
 						->selectRaw('categories.id, categories.name, count(posts.category) cate_cnt')
-						->groupBy('categories.id')
+						->groupBy('categories.id', 'categories.name')
 						->get();
 			return $categories;
 		}
