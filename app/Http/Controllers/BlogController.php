@@ -10,7 +10,9 @@ use App\Models\Tag;
 use App\Models\Post_tag;
 use App\Models\Category;
 
-
+/**
+ * testing git flow wiht folk
+**/
 class BlogController extends Controller
 {
     //
